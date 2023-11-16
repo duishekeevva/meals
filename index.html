@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="container">
+    <div class="input-wrapper">
+
+        <label for="all">Все</label>
+        <input type="radio" checked name="type" id="all">
+
+        <label for="search">Поиск</label>
+        <input type="radio"  name="type" id="search">
+    </div>
+    <div class="img-box">
+    </div>
+    <div class="search-wrapper hidden">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button id="submit">Search</button>
+    </div>
+    <div class="result hidden">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <img src="" id="img" alt=""/>
+                </div>
+            </div>
+            <div class="col-6" style="display: flex;flex-direction: column; justify-content: space-between; gap:15px;">
+                <h2 id="name"></h2>
+                <p id="category"></p>
+                <h3>Instruction</h3>
+                <p id="instruction"></p>
+                <div class="row" id="ingredients">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
