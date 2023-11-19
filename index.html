@@ -7,42 +7,80 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <div class="input-wrapper">
+<header class="header">
+    <div class="container header-wrapper">
+        <img class="logo" src="./assets/logo-hochyedy.png" width="300px" alt="">
+        <nav class="nav">
+            <a href="#home">
+                МЕНЮ
+            </a>
+            <a href="#Recipes">
+                О ДОСТАВКЕ
+            </a>
+            <a href="#article">
+                ОТЗЫВЫ
+            </a>
+            <a href="#contact">
+                КОНТАКТЫ
+            </a>
+        </nav>
+        <button>ЗАКАЗАТЬ</button>
+    </div>
+</header>
+<main>
+    <section class="head">
+        <div class="container head-container">
+            <h3 style="color: #ff0000; font-size: 22px">Доставка осуществляется с 11:00 до 23:00. Стоимость доставки 100 руб.</h3>
+            <p style="color: white; font-size: 22px">
+                Решили вкусно поесть? Не тратьте своё время на поход в магазин и на суету на кухне. За те же деньги доставим Вам вкуснейшие блюда приготовленные нашим шеф-поваром.
+            </p>
+            <p style="color: #fdd06c; font-size: 22px">
+                Ресторан "У Мангала" гарантирует качество.
+            </p>
+        </div>
+    </section>
+    <section class="menu">
+        <div class="container">
+            <h3 style="color:#fdd06c; font-size: 30px; text-align: center" >МЕНЮ</h3>
+            <div class="input-wrapper">
+                <label for="all">Все блюда</label>
+                <input type="radio" checked name="type" id="all">
 
-        <label for="all">Все</label>
-        <input type="radio" checked name="type" id="all">
-
-        <label for="search">Поиск</label>
-        <input type="radio"  name="type" id="search">
-    </div>
-    <div class="img-box">
-    </div>
-    <div class="search-wrapper hidden">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button id="submit">Search</button>
-    </div>
-    <div class="result hidden">
-        <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <img src="" id="img" alt=""/>
-                </div>
+                <label for="search">Поиск</label>
+                <input type="radio"  name="type" id="search">
             </div>
-            <div class="col-6" style="display: flex;flex-direction: column; justify-content: space-between; gap:15px;">
-                <h2 id="name"></h2>
-                <p id="category"></p>
-                <h3>Instruction</h3>
-                <p id="instruction"></p>
-                <div class="row" id="ingredients">
+            <div class="img-box">
+            </div>
+            <div class="search-wrapper hidden">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="submit">Search</button>
+            </div>
+            <div class="result hidden">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <img src="" id="img" alt=""/>
+                            <div class="row" id="ingredients" style="color: white">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6" style="display: flex;flex-direction: column;  gap:15px; color: white">
+                        <h2 id="name"></h2>
+                        <p id="category"></p>
+                        <h3>Instruction</h3>
+                        <p id="instruction"></p>
+                        <iframe id="video" src="" ></iframe>
+                    </div>
                 </div>
+
             </div>
         </div>
+    </section>
+</main>
 
-    </div>
-</div>
 <script src="./script.js"></script>
 </body>
 </html>

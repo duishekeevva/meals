@@ -10,6 +10,7 @@ const img = document.querySelector('#img')
 const ingredients = document.querySelector('#ingredients')
 const result = document.querySelector('.result')
 const searchWrapper=document.querySelector('.search-wrapper')
+const video =document.querySelector('#video')
 
 const handleMeal=()=> {
     fetch('https://www.themealdb.com/api/json/v2/1/randomselection.php')
@@ -40,6 +41,7 @@ all.addEventListener('change', () => {
         picture.classList.remove('hidden')
         search.classList.add('hidden')
         searchWrapper.classList.add('hidden')
+        result.classList.remove('hidden')
     }
 })
 
@@ -58,31 +60,43 @@ const handleSearch = () => {
         .then(res => res.json())
         .then(json => {
             console.log(value)
-            const cocktail = json.meals[0]
+            const meals = json.meals[0]
             ingredients.innerHTML=`
             <div class="col-4">
                 <div>
-                    <img src="https://www.thecocktaildb.com/images/ingredients/${cocktail.strIngredient1}-Medium.png" alt="">
-                    <p>${cocktail.strIngredient1}</p>
+                    <img src="https://www.themealdb.com/images/ingredients/${meals.strIngredient1}.png" alt="">
+                    <p>${meals.strIngredient1}</p>
                 </div>
             </div>
             <div class="col-4">
                 <div>
-                    <img src="https://www.thecocktaildb.com/images/ingredients/${cocktail.strIngredient2}-Medium.png" alt="">
-                    <p>${cocktail.strIngredient2}</p>
+                    <img src="https://www.themealdb.com/images/ingredients/${meals.strIngredient2}.png" alt="">
+                    <p>${meals.strIngredient2}</p>
                 </div>
             </div>
             <div class="col-4">
-            <img src="https://www.thecocktaildb.com/images/ingredients/${cocktail.strIngredient3}-Medium.png" alt="">
-            <p>${cocktail.strIngredient3}</p>
+            <img src="https://www.themealdb.com/images/ingredients/${meals.strIngredient3}.png" alt="">
+            <p>${meals.strIngredient3}</p>
             </div>
-           
-            `
+            <div class="col-4">
+            <img src="https://www.themealdb.com/images/ingredients/${meals.strIngredient4}.png" alt="">
+            <p>${meals.strIngredient4}</p>
+            </div>
+            <div class="col-4">
+            <img src="https://www.themealdb.com/images/ingredients/${meals.strIngredient5}.png" alt="">
+            <p>${meals.strIngredient5}</p>
+            </div>
+            <div class="col-4">
+            <img src="https://www.themealdb.com/images/ingredients/${meals.strIngredient6}.png" alt="">
+            <p>${meals.strIngredient6}</p>
+            </div>
+                  `
             json.meals.forEach(meals => {
                 img.src =meals.strMealThumb
                 name.innerHTML =meals.strMeal
                 category.innerText = 'Category: ' + meals.strCategory
                 instruction.innerText = meals.strInstructions
+                video.src=meals.strYoutube
             })
 
         })
